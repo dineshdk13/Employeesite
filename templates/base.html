@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Site</title>
+    {% if request.user.is_authenticated %}
+    <p> Hi {{request.user.username}}! <a href="{% url 'logout' %}">Logout</a></p>
+    {% else %}
+    <p><a href="{% url 'register' %}">Register | <a href="#">Login</a></a></p>
+    {% endif %}
 </head>
-<h1>header</h1>
 <body>
-    <!-- <h1>Hello Employee</h1> -->
     {% block content %}
     {% endblock content %} 
 </body>
-<footer> <h2>Dhinesh DK © 2020</h2></footer>
+<footer>
+     <h2>Dhinesh DK © 2020</h2>
+</footer>
 </html>

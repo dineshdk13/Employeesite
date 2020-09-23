@@ -6,9 +6,13 @@
 <p>body of the website</p>
 {{some_string}}
 
-{% for question in questions %}
-    {% include 'home/snippets/body_snippet.html' with  value=question %}
+{% for account in accounts %}
+    <!-- {% include 'home/snippets/body_snippet.html' with  value=accounts %} -->
+    <p>{{account}}</p>
 {% endfor %}
 </div>
 
 {% endblock content %}
+
+
+
