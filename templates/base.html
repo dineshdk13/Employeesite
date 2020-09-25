@@ -1,29 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <head>
-        {% if request.user.is_authenticated %}
-        <p><a href="{% url 'home' %}">Home</a> | 
-            <a href="{% url 'account' %}">Account</a> |
-            <a href="{% url 'logout' %}">Logout</a></p>
-        <p>Hello, {{request.user.username}}</p>
-        {% else %}
-    <p>
-        <a href="{% url 'home' %}">Home</a> | 
-        <a href="{% url 'register' %}">Register</a> | 
-        <a href="{% url 'login' %}">Login</a>
-    </p>
-        {% endif %}
-        <hr>
-        
+        <title>Employee Site</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        {% include 'snippets/header.html' %}
     </head>
 </head>
+
 <body>
-    {% block content %}
-    {% endblock content %} 
+    <!-- body -->
+    <style type="text/css">
+        .main {
+            min-height: 100vh;
+            height: 100%;
+    </style>
+    <div class="main">
+        {% block content %}
+        {% endblock content %}
+    </div>
+
+    <!-- end body -->
+    {% include 'snippets/footer.html' %}
 </body>
-<footer>
-    <hr>
-    <small>Dhinesh DK © 2020 </small>
-</footer>
+
 </html>

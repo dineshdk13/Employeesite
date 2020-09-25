@@ -1,14 +1,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div>
-<h3>Created Accounts</h3>
-{{some_string}}
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4">Wait!</h1>
+    <p class="lead">Coder is typing...</p>
+</div>
+<div class="container">
+    <div class="d-flex flex-column">
+        <h3>Created Accounts</h3>
+        {{some_string}}
+        {% for account in accounts %}
+        <!-- {% include 'home/snippets/body_snippet.html' with  value=accounts %} -->
+        <p>{{account}}</p>
+        {% endfor %}
+    </div>
 
-{% for account in accounts %}
-    <!-- {% include 'home/snippets/body_snippet.html' with  value=accounts %} -->
-    <p>{{account}}</p>
-{% endfor %}
 </div>
 
 {% endblock content %}
