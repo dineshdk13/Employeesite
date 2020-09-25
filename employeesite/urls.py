@@ -18,12 +18,14 @@ from django.urls import path
 from homepage.views import home_screen
 from accounts.views import (
     registration_view,
-    logout_view
+    logout_view,
+    login_view
 )
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls ),
     path('', home_screen , name="home"),
     path('registration', registration_view , name="register"),
     path('logout', logout_view , name="logout"),
+    path('login', login_view , name="login"),
 ]
