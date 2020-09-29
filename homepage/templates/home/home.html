@@ -7,12 +7,24 @@
 </div>
 <div class="container">
     <div class="d-flex flex-column">
-        <h3>Created Accounts</h3>
+        <!-- <h3>Created Accounts</h3> -->
         {{some_string}}
+        
         {% for account in accounts %}
         <!-- {% include 'home/snippets/body_snippet.html' with  value=accounts %} -->
+        
         <p>{{account}}</p>
+
         {% endfor %}
+        <hr>
+        
+        {% if request.user.is_manager %}
+        <p>Your Team Members:</p>
+            {% for teammate in manager_table %}
+                <p>{{teammate}}</p>
+            {% endfor %}
+        {% endif %}
+        
     </div>
 
 </div>

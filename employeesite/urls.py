@@ -23,9 +23,11 @@ from accounts.views import (
     account_view
 )
 
+# https://docs.djangoproject.com/en/3.1/topics/auth/default/#module-django-contrib-auth-views
 urlpatterns = [
     path('admin/', admin.site.urls ),
     path('', home_screen , name="home"),
+    #path('', manager_screen , name="manager"),
     path('registration', registration_view , name="register"),
     path('logout', logout_view , name="logout"),
     path('login', login_view , name="login"),

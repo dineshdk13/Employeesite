@@ -35,9 +35,10 @@ class Account(AbstractBaseUser):
     last_login=                 models.DateTimeField(verbose_name='last login', auto_now=True)
     is_admin=                   models.BooleanField(default=False)
     is_active=                  models.BooleanField(default=True)
-    is_staff=                   models.BooleanField(default=False)
+    is_staff=                   models.BooleanField(default=True)
     is_superuser=               models.BooleanField(default=False)
-    #is_manager=                    models.CharField(max_length=30, default=False)
+    is_manager=                 models.BooleanField(default=False)
+    manager =                   models.ForeignKey('self', null=True, blank=True, on_delete=models.CASCADE)
 
     USERNAME_FIELD='username'
     #REQUIRED_FIELDS=['username',]
