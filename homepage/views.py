@@ -1,4 +1,4 @@
-from django.shortcuts import render,get_object_or_404
+from django.shortcuts import render,HttpResponse
 from accounts.models import Account
 # Create your views here.
 
@@ -16,5 +16,7 @@ def manager_screen(request):
         manager_table=Account.objects.filter(manager=request.user)
         context['manager_table']=manager_table
     return render(request, "account/myteam.html",context)
+
+
 
 
